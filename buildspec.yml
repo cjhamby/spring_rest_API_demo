@@ -4,5 +4,5 @@ phases:
       - echo "using buildspec.yml"
   build: 
     commands:
-      - echo "Building maven package"
+      - echo "Building maven package...this file isn't necessary"
       - mvn clean package
