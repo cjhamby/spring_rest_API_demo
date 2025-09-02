@@ -1,0 +1,5 @@
+branch-defaults:
+  main:
+    environment: SpringBootDemo-env
+global:
+  profile: null
