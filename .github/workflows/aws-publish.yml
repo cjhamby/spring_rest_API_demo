@@ -14,8 +14,13 @@ permissions:
 
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
-  connect to aws:
+    steps:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
@@ -27,13 +32,6 @@ jobs:
         run: |
           aws sts get-caller-identity
 
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
-    steps:
       - name: Get Code
         uses: actions/checkout@v4
 
