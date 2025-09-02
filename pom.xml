@@ -48,6 +48,14 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+	<repository>
+		<id>github</id>
+		<name>GitHub cjhamby Apache Maven Packages</name>
+		<url>https://maven.pkg.github.com/cjhamby/spring_rest_API_demo</url>
+	</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
