@@ -1,0 +1,8 @@
+phases:
+  init:
+    commands:
+      - echo "using buildspec.yml"
+  build: 
+    commands:
+      - echo "Building maven package"
+      - mvn clean package
