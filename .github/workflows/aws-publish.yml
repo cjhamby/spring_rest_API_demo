@@ -28,9 +28,7 @@ jobs:
 
       # Hello from AWS: WhoAmI
       - name: Sts GetCallerIdentity
-        run: |
-          aws sts get-caller-identity
-
+        run: aws sts get-caller-identity
       - name: Get Code
         uses: actions/checkout@v4
 
@@ -42,12 +40,27 @@ jobs:
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
 
-
       - name: Build with Maven
         run: mvn clean package 
   
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      # - name: Publish to GitHub Packages Apache Maven
+      #   run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      #   env:
+      #     GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Install Python 3.9
+        uses: actions/setup-python@v2
+        with:
+            python-version: 3.9
+        
+      # Install the EB CLI using pip
+      - name: Install EB CLI
+        run: |
+          python -m pip install --upgrade pip
+          pip install awsebcli
+      
+      # Deploy to EB
+      - name: Deploy to Elastic Beanstalk
+        run: |
+          eb deploy
           
