@@ -6,7 +6,7 @@ name: AWS CICD
 on: push
 
 env:  
-      AWS_REGION : "us-east-1" #Change to reflect your Region
+      AWS_REGION : "us-east-1" #Change to reflect your Region 
 
 permissions:
       id-token: write
