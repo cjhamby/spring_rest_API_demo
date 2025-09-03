@@ -48,19 +48,20 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Install Python 3.9
-        uses: actions/setup-python@v2
-        with:
-            python-version: 3.9
+      # # - name: Install Python 3.9
+      # #   uses: actions/setup-python@v2
+      # #   with:
+      # #       python-version: 3.9
         
-      # Install the EB CLI using pip
-      - name: Install EB CLI
-        run: |
-          python -m pip install --upgrade pip
-          pip install awsebcli
+      # # # Install the EB CLI using pip
+      # # - name: Install EB CLI
+      # #   run: |
+      # #     python -m pip install --upgrade pip
+      # #     pip install awsebcli
       
-      # Deploy to EB
-      - name: Deploy to Elastic Beanstalk
-        run: |
-          eb deploy
+      # # # Deploy to EB
+      # # - name: Deploy to Elastic Beanstalk
+      # #   run: |
+      # #     aws elasticbeanstalk 
+      # #     aws elasticbeanstalk update-environment --application-name SpringBoot_Demo --environment-id e-c3keys33gs 
           
