@@ -1,5 +1,11 @@
 version: 0.2
 
+eb_codebuild_settings:
+  CodeBuildServiceRole: arn:aws:iam::313549093990:role/Codebuild_to_AWSElasticBeanstalk_ServiceRole
+  # ComputeType: size
+  # Image: image
+  # Timeout: minutes 
+
 phases:
   install:
     runtime-versions:
