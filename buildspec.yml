@@ -1,0 +1,8 @@
+version: 0.2
+
+phases:
+  build:
+    runtime-versions:
+      java: corretto21
+    commands:
+      mvn clean package
