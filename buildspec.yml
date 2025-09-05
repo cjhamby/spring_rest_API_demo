@@ -9,3 +9,7 @@ phases:
     commands:
       - mvn clean package
   
+  artifacts:
+    files: 
+      - '**/*'
+    discard-paths: yes
